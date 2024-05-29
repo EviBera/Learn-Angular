@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
 
 @Component({
@@ -6,16 +6,16 @@ import { IProduct } from "./product";
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-    pageTitle: string = 'Product list';
-    imageWidth: number = 50;
+export class ProductListComponent implements OnInit {
+  pageTitle: string = 'Product list';
+  imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
     listFilter: string = 'cart';
     products: IProduct[] = [
         {
-            "productId": 1,
-            "productName": "Leaf Rake",
+          "productId": 1,
+          "productName": "Leaf Rake",
             "productCode": "GDN-0011",
             "releaseDate": "March 19, 2021",
             "description": "Leaf rake with 48-inch wooden handle.",
@@ -24,7 +24,7 @@ export class ProductListComponent {
             "imageUrl": "assets/images/leaf_rake.png"
           },
         {
-            "productId": 5,
+          "productId": 5,
             "productName": "Hammer",
             "productCode": "TBX-0048",
             "releaseDate": "May 21, 2021",
@@ -43,9 +43,13 @@ export class ProductListComponent {
             "starRating": 3.7,
             "imageUrl": "assets/images/saw.png"
           }
-    ];
+        ];
 
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
-}
+    
+    ngOnInit(): void {
+      console.log('OnInit');
+    }
+  }
