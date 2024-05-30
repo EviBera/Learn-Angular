@@ -14,4 +14,8 @@ export class StarComponent implements OnChanges {
         this.cropWidth = this.rating * 75/5;
         console.log('Calculated cropWidth:', this.cropWidth);
     }
+
+    onClick(): void {
+        console.log(`The rating ${this.rating} was clicked!`);
+    }
 }
