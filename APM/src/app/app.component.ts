@@ -6,12 +6,16 @@ import { Component } from "@angular/core";
     <h5>My first component (AppComponent - whole screen, its title:)</h5>
     
     <nav class='navbar nav-expand navbar-light bg-light'>
-      <a class='navbar-brand'>{{pageTitle}}</a>
+      <h1 class='navbar-brand'>{{pageTitle}}</h1>
       <ul class='nav nav-pills'>
         <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
         <li><a class='nav-link' [routerLink]="['/products']">Products</a></li>
       </ul>
     </nav>
+
+    <div class='container'>
+      <router-outlet></router-outlet>
+    </div>
   `
 })
 export class AppComponent {
