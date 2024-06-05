@@ -3,17 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "apm-new": {
+    "hello-world": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "pm",
+      "prefix": "hw",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/apm-new",
+            "outputPath": "dist/hello-world",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "apm-new:build:production"
+              "buildTarget": "hello-world:build:production"
             },
             "development": {
-              "buildTarget": "apm-new:build:development"
+              "buildTarget": "hello-world:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "00caad28-7d5c-4fba-bf95-7e84f42d9d9c"
   }
 }
