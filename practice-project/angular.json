@@ -3,17 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "apm-new": {
+    "practice-project": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "pm",
+      "prefix": "pp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/apm-new",
+            "outputPath": "dist/practice-project",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,7 +39,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -59,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "apm-new:build:production"
+              "buildTarget": "practice-project:build:production"
             },
             "development": {
-              "buildTarget": "apm-new:build:development"
+              "buildTarget": "practice-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,6 +109,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "b7725215-4732-458c-9735-02d54a48629e"
   }
 }

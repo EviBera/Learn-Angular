@@ -3,9 +3,9 @@ import { Component } from "@angular/core";
 @Component({
   selector: 'pm-root',
   template: `
-    <h5>My first component (AppComponent - whole screen, its title:)</h5>
+    <h5 class='p-2'>My first component (AppComponent - whole screen, its title:)</h5>
     
-    <nav class='navbar nav-expand navbar-light bg-light'>
+    <nav class='navbar nav-expand navbar-light bg-light p-2'>
       <h1 class='navbar-brand'>{{pageTitle}}</h1>
       <ul class='nav nav-pills'>
         <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
