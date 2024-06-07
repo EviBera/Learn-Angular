@@ -1,3 +1,6 @@
+# Original project
+[Jim Cooper's repo](https://github.com/jmcooper/joes-robot-shop.git)
+
 # JoesRobotShop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
