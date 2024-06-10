@@ -1,10 +1,10 @@
 <div class="container">
     <div class="filters">
-      <a class="button" (click)="filter='Heads'">Heads</a>
-      <a class="button" (click)="filter='Arms'">Arms</a>
-      <a class="button" (click)="filter='Torsos'">Torsos</a>
-      <a class="button" (click)="filter='Bases'">Bases</a>
-      <a class="button" (click)="filter=''">All</a>
+      <a class="button bold" (click)="filter='Heads'">Heads</a>
+      <a class="button bold" (click)="filter='Arms'">Arms</a>
+      <a class="button bold" (click)="filter='Torsos'">Torsos</a>
+      <a class="button bold" (click)="filter='Bases'">Bases</a>
+      <a class="button bold" (click)="filter=''">All</a>
     </div>
   
     <ul class="products">
@@ -21,7 +21,7 @@
             <!-- we can bind an attrubute to a return value of a function on our component -->
             <img [src]="getImageUrl(product)" [alt]="product?.name" />
             <div class="product-info">
-              <div class="name">{{ product?.name }}</div>
+              <div class="name lightPurple">{{ product?.name }}</div>
               <div class="description">{{ product?.description }}</div>
               <div class="category">Part Type: {{product?.category}}</div>
             </div>
