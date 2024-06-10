@@ -10,7 +10,10 @@
     <ul class="products">
       <!-- structural directives: change the stucture of an HTML document; signed with: * -->
       <li class="product-item" *ngFor="let currentProduct of getFilteredProducts()">
-        <bot-product-details [productDetail]="currentProduct"></bot-product-details>
+        <bot-product-details 
+          [productDetail]="currentProduct" 
+          (buy)="addToCart(currentProduct)">
+        </bot-product-details>
       </li>
     </ul>
   </div>

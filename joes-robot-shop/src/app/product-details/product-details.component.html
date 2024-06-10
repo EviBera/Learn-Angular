@@ -7,11 +7,11 @@
       <!-- whenever data  changes in the component, it will be ubdated in the template -->
       <!-- <img [src]=" '/assets/images/robot-parts/' + product.imageName " [alt]="product.name" /> -->
       <!-- we can bind an attrubute to a return value of a function on our component -->
-      <img [src]="getImageUrl(productDetail)" [alt]="productDetail?.name" />
+      <img [src]="getImageUrl(productDetail)" [alt]="productDetail.name" />
       <div class="product-info">
-        <div class="name lightPurple">{{ productDetail?.name }}</div>
-        <div class="description">{{ productDetail?.description }}</div>
-        <div class="category">Part Type: {{productDetail?.category}}</div>
+        <div class="name lightPurple">{{ productDetail.name }}</div>
+        <div class="description">{{ productDetail.description }}</div>
+        <div class="category">Part Type: {{productDetail.category}}</div>
       </div>
     </div>
     <div class="price">
@@ -30,13 +30,13 @@
 
       <div 
         [ngStyle]="{ 'color' : productDetail.discount > 0 ? 'grey' : ''}"
-        [ngClass]="getDiscountedClasses(productDetail)">{{productDetail?.price | currency:'JPY' }}</div>
+        [ngClass]="getDiscountedClasses(productDetail)">{{productDetail.price | currency:'JPY' }}</div>
 
       <!-- Tutorial-like formatting without currency pipe: -->
       <!-- <div>${{ product.price.toFixed(2)}}</div> -->
       <div class="discount" *ngIf="productDetail.discount > 0">
         {{ productDetail.price * (1 - productDetail.discount) | currency:'JPY' }}
       </div>
-      <button class="cta" (click)="addToCart(productDetail)">Buy</button>
+      <button class="cta" (click)="buyButtonClicked(productDetail)">Buy</button>
     </div>
   </div>
