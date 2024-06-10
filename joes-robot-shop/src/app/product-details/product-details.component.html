@@ -1,0 +1,42 @@
+<div class="product">
+    <div class="product-details">
+      <!-- interpolation: {{ some value }}-->
+      <!-- <img src="/assets/images/robot-parts/{{product.imageName}}" alt="{{product.name}}" /> -->
+      <!-- attribute binding: [] + JS expression in quotes-->
+      <!-- one way binding from component to the template -->
+      <!-- whenever data  changes in the component, it will be ubdated in the template -->
+      <!-- <img [src]=" '/assets/images/robot-parts/' + product.imageName " [alt]="product.name" /> -->
+      <!-- we can bind an attrubute to a return value of a function on our component -->
+      <img [src]="getImageUrl(productDetail)" [alt]="productDetail?.name" />
+      <div class="product-info">
+        <div class="name lightPurple">{{ productDetail?.name }}</div>
+        <div class="description">{{ productDetail?.description }}</div>
+        <div class="category">Part Type: {{productDetail?.category}}</div>
+      </div>
+    </div>
+    <div class="price">
+      
+      
+      <!-- class binding: the condition must evaluate to true to apply the class -->
+      <!-- <div [class.strikeThrough]="product.discount > 0">{{product?.price | currency:'JPY' }}</div> -->
+      
+      <!-- with ngClass: pass in an object with classname(s) to apply and boolean condition(s)-->
+      <!-- <div [ngClass]="{ strikeThroug: product.discount > 0 }">{{product?.price | currency:'JPY' }}</div> -->
+      <!-- we can use it with functions as well: -->
+
+      <!-- we can use style binding in the tag-->
+      <!-- [style.color]="product.discount > 0 ? 'red' : ''" -->
+      <!-- with ngStyle we need an object: key is the style property & the value is a string or an expression that evaluates to a string -->
+
+      <div 
+        [ngStyle]="{ 'color' : productDetail.discount > 0 ? 'grey' : ''}"
+        [ngClass]="getDiscountedClasses(productDetail)">{{productDetail?.price | currency:'JPY' }}</div>
+
+      <!-- Tutorial-like formatting without currency pipe: -->
+      <!-- <div>${{ product.price.toFixed(2)}}</div> -->
+      <div class="discount" *ngIf="productDetail.discount > 0">
+        {{ productDetail.price * (1 - productDetail.discount) | currency:'JPY' }}
+      </div>
+      <button class="cta" (click)="addToCart(productDetail)">Buy</button>
+    </div>
+  </div>
