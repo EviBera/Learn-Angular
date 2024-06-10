@@ -8,15 +8,16 @@
     </div>
   
     <ul class="products">
-      <li class="product-item">
+      <!-- structural directives: change the stucture of an HTML document; signed with: * -->
+      <li class="product-item" *ngFor="let product of products">
         <div class="product">
           <div class="product-details">
             <!-- interpolation: {{ some value }}-->
-            <img src="/assets/images/robot-parts/{{product.imageName}}" alt="{{product.name}}" />
+            <!-- <img src="/assets/images/robot-parts/{{product.imageName}}" alt="{{product.name}}" /> -->
             <!-- attribute binding: [] + JS expression in quotes-->
             <!-- one way binding from component to the template -->
             <!-- whenever data  changes in the component, it will be ubdated in the template -->
-            <img [src]=" '/assets/images/robot-parts/' + product.imageName " [alt]="product.name" />
+            <!-- <img [src]=" '/assets/images/robot-parts/' + product.imageName " [alt]="product.name" /> -->
             <!-- we can bind an attrubute to a return value of a function on our component -->
             <img [src]="getImageUrl(product)" [alt]="product.name" />
             <div class="product-info">
