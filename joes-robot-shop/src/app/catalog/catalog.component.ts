@@ -198,4 +198,24 @@ export class CatalogComponent {
       this.products.filter((product) => product.category === this.filter);
   }
 
+  /*   We have multiple options for applying ngClass directive, eg.: 
+
+  getDiscountedClasses(product: IProduct) {
+      return { strikeThroug: product.discount > 0 }
+    }
+  
+  getDiscountedClasses(product: IProduct) {
+    if(product.discount > 0) return ['strikeThroug', 'bold'];
+    else return [];
+  }
+  
+  */
+  
+  getDiscountedClasses(product: IProduct) {
+    return product.discount > 0 ? 
+      'strikeThrough' : 
+      '';
+  }
+   
+
 }

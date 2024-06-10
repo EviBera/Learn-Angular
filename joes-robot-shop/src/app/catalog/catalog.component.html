@@ -27,7 +27,14 @@
             </div>
           </div>
           <div class="price">
-            <div *ngIf="product.discount === 0">{{product?.price | currency:'JPY' }}</div>
+            <!-- class binding: the condition must evaluate to true to apply the class -->
+            <!-- <div [class.strikeThrough]="product.discount > 0">{{product?.price | currency:'JPY' }}</div> -->
+
+            <!-- with ngClass: pass in an object with classname(s) to apply and boolean condition(s)-->
+            <!-- <div [ngClass]="{ strikeThroug: product.discount > 0 }">{{product?.price | currency:'JPY' }}</div> -->
+            <!-- we can use it with functions as well: -->
+            <div [ngClass]="getDiscountedClasses(product)">{{product?.price | currency:'JPY' }}</div>
+
             <!-- Tutorial-like formatting without currency pipe: -->
             <!-- <div>${{ product.price.toFixed(2)}}</div> -->
             <div class="discount" *ngIf="product.discount > 0">
