@@ -27,9 +27,12 @@
             </div>
           </div>
           <div class="price">
-            <div>{{product?.price | currency:'EUR'}}</div>
+            <div *ngIf="product.discount === 0">{{product?.price | currency:'EUR'}}</div>
             <!-- Tutorial-like formatting without currency pipe: -->
             <!-- <div>${{ product.price.toFixed(2)}}</div> -->
+            <div class="discount" *ngIf="product.discount > 0">
+              {{ product.price * (1 - product.discount) | currency:'EUR'}}
+            </div>
             <button class="cta">Buy</button>
           </div>
         </div>
