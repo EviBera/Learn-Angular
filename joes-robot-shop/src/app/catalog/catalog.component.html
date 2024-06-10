@@ -19,15 +19,15 @@
             <!-- whenever data  changes in the component, it will be ubdated in the template -->
             <!-- <img [src]=" '/assets/images/robot-parts/' + product.imageName " [alt]="product.name" /> -->
             <!-- we can bind an attrubute to a return value of a function on our component -->
-            <img [src]="getImageUrl(product)" [alt]="product.name" />
+            <img [src]="getImageUrl(product)" [alt]="product?.name" />
             <div class="product-info">
-              <div class="name">{{ product.name }}</div>
-              <div class="description">{{ product.description }}</div>
-              <div class="category">Part Type: {{product.category}}</div>
+              <div class="name">{{ product?.name }}</div>
+              <div class="description">{{ product?.description }}</div>
+              <div class="category">Part Type: {{product?.category}}</div>
             </div>
           </div>
           <div class="price">
-            <div>{{product.price | currency:'EUR'}}</div>
+            <div>{{product?.price | currency:'EUR'}}</div>
             <!-- Tutorial-like formatting without currency pipe: -->
             <!-- <div>${{ product.price.toFixed(2)}}</div> -->
             <button class="cta">Buy</button>
