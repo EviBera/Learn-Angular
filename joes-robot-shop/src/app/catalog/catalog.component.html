@@ -27,13 +27,22 @@
             </div>
           </div>
           <div class="price">
+            
+            
             <!-- class binding: the condition must evaluate to true to apply the class -->
             <!-- <div [class.strikeThrough]="product.discount > 0">{{product?.price | currency:'JPY' }}</div> -->
-
+            
             <!-- with ngClass: pass in an object with classname(s) to apply and boolean condition(s)-->
             <!-- <div [ngClass]="{ strikeThroug: product.discount > 0 }">{{product?.price | currency:'JPY' }}</div> -->
             <!-- we can use it with functions as well: -->
-            <div [ngClass]="getDiscountedClasses(product)">{{product?.price | currency:'JPY' }}</div>
+
+            <!-- we can use style binding in the tag-->
+            <!-- [style.color]="product.discount > 0 ? 'red' : ''" -->
+            <!-- with ngStyle we need an object: key is the style property & the value is a string or an expression that evaluates to a string -->
+
+            <div 
+              [ngStyle]="{ 'color' : product.discount > 0 ? 'grey' : ''}"
+              [ngClass]="getDiscountedClasses(product)">{{product?.price | currency:'JPY' }}</div>
 
             <!-- Tutorial-like formatting without currency pipe: -->
             <!-- <div>${{ product.price.toFixed(2)}}</div> -->
