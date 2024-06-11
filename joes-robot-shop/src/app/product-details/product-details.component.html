@@ -30,12 +30,12 @@
 
       <div 
         [ngStyle]="{ 'color' : productDetail.discount > 0 ? 'grey' : ''}"
-        [ngClass]="getDiscountedClasses(productDetail)">{{productDetail.price | currency:'JPY' }}</div>
+        [ngClass]="getDiscountedClasses(productDetail)">{{productDetail.price | currency }}</div>
 
       <!-- Tutorial-like formatting without currency pipe: -->
       <!-- <div>${{ product.price.toFixed(2)}}</div> -->
       <div class="discount" *ngIf="productDetail.discount > 0">
-        {{ productDetail.price * (1 - productDetail.discount) | currency:'JPY' }}
+        {{ productDetail.price * (1 - productDetail.discount) | currency }}
       </div>
       <button class="cta" (click)="buyButtonClicked(productDetail)">Buy</button>
     </div>
