@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from './catalog/product.model';
 import { ILineItem } from './catalog/lineItem.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CartService {
   //cart: IProduct[] = [];
   cart: ILineItem[] = [];
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   /*
   add(product: IProduct){
@@ -30,9 +31,11 @@ export class CartService {
       lineItem = { product: product, qty: 1};
       this.cart.push(lineItem);
     }
-
-    console.log(`product: ${product.name} added to cart`);
-    console.log(`Total price: $${this.getTotalPrice()}`);
+        
+    this.http.post('/api/cart', this.cart).subscribe(() => {
+      console.log(`product: ${product.name} added to cart`);
+      console.log(`Total price: $${this.getTotalPrice()}`);
+    })
   }
 
   getTotalPrice() {
