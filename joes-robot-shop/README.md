@@ -1,5 +1,8 @@
-# Original project
-[Jim Cooper's repo](https://github.com/jmcooper/joes-robot-shop.git)
+# Original project: [Jim Cooper's repo](https://github.com/jmcooper/joes-robot-shop.git)
+
+In this project I follow ['Angular Fundamentals' course](https://app.pluralsight.com/library/courses/fundamentals-angular) that is available on Pluralsight.
+
+
 
 # JoesRobotShop
 
