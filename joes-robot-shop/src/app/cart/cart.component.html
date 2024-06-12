@@ -16,13 +16,13 @@
           </div>
         </div>
         <div class="price">
-          <div [ngClass]="{ strikethrough: product.discount > 0 }">
+<!--           <div [ngClass]="{ strikethrough: product.discount > 0 }">
             {{ product.price | currency : "USD" }}
           </div>
           <div *ngIf="product.discount > 0" class="discount">
             {{ product.price * (1 - product.discount) | currency : "USD" }}
           </div>
-          <button (click)="removeFromCart(product)">Remove</button>
+ -->          <button (click)="removeFromCart(product)">Remove</button>
         </div>
       </div>
     </li>
