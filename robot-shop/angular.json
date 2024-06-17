@@ -30,12 +30,7 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+            "assets": ["src/favicon.ico", "src/assets", "src/app/home/images"],
             "styles": [
               "src/styles.css"
             ],
@@ -69,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "robot-shop:build:production"
+              "browserTarget": "robot-shop:build:production"
             },
             "development": {
-              "buildTarget": "robot-shop:build:development"
+              "browserTarget": "robot-shop:build:development"
             }
           },
           "defaultConfiguration": "development"
