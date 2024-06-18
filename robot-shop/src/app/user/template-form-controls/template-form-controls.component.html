@@ -14,6 +14,7 @@
   
       <div class="control">
         <select name="select" type="select" [(ngModel)]="stringInput">
+            <!-- [value] does not hold the data type in options elements-->
           <option *ngFor="let option of selectOptions" [value]="option.value">{{option.text}}</option>
         </select>
         <div>Value: {{stringInput}} Type: {{getType(stringInput)}}</div>
@@ -21,6 +22,7 @@
   
       <div class="control">
         <select name="numericSelect" type="numericSelect" [(ngModel)]="numericSelect">
+          <!-- [ngValue] preserves the data type in options elements-->
           <option [ngValue]="1">One</option>
           <option [ngValue]="2">Two</option>
         </select>
@@ -29,6 +31,9 @@
   
       <div class="control">
         <div>
+          <!-- radio buttons: use value attribute for strings & [value] binding for numbers, eg.: -->
+          <!-- value = "1" -->
+          <!-- [value] = "1" -->
           <input name="radioInput" type="radio" [value]="1" [(ngModel)]="radioInput" /> Radio One
         </div>
         <div>
@@ -38,6 +43,7 @@
       </div>
   
       <div class="control">
+        <!-- checkbox type is always boolean: true if checked, false if not checked -->
         <div><input type="checkbox" name="checkboxInput" [(ngModel)]="checkboxInput" /> Checkbox Input</div>
         <div>Value: {{checkboxInput}} Type: {{getType(checkboxInput)}}</div>
       </div>
