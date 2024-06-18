@@ -12,6 +12,7 @@ import { SiteHeaderComponent } from './site-header/site-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInComponent } from './user/sign-in/sign-in.component';
+import { TemplateFormControlsComponent } from './user/template-form-controls/template-form-controls.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
     CartComponent,
     HomeComponent,
     SiteHeaderComponent,
-    SignInComponent
+    SignInComponent,
+    TemplateFormControlsComponent
   ],
   imports: [
     BrowserModule,
