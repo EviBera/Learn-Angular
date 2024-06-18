@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -26,7 +27,8 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
