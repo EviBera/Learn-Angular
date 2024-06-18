@@ -11,8 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { SignInComponent } from './user/sign-in/sign-in.component';
-import { TemplateFormControlsComponent } from './user/template-form-controls/template-form-controls.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -21,16 +20,15 @@ import { TemplateFormControlsComponent } from './user/template-form-controls/tem
     CatalogComponent,
     CartComponent,
     HomeComponent,
-    SiteHeaderComponent,
-    SignInComponent,
-    TemplateFormControlsComponent
+    SiteHeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
