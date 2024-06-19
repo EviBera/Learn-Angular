@@ -38,6 +38,6 @@ export class EditContactComponent implements OnInit {
   }
 
   saveContact() {
-
+    console.log(this.contact);
   }
 }
