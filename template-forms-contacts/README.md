@@ -1,3 +1,7 @@
+# Original project: [Jim Cooper's repo](https://github.com/jmcooper/template-forms-contacts)
+
+In this project I follow the below mentioned Pluralsight tutorial:
+
 # TemplateFormsContacts
 This is the demo project for the [Angular Template Forms Course](https://app.pluralsight.com/library/courses/angular-template-forms) at Pluralsight. Check it out if you want to learn all about Angular Template-driven forms.
 
