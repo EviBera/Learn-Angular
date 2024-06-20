@@ -2,7 +2,9 @@
   <h1 class="header">
     Edit Contact
   </h1>
-  <form>
+  <!-- specify the task here with ngSubmit that has to be done with submission -->
+   <!-- it works with the submit button and with hitting 'enter' as well -->
+  <form (ngSubmit)="saveContact()">
     <section>
       <nav>Name/Info</nav>
       <div>
@@ -45,9 +47,12 @@
         </div>
       </div>
     </section>
+    <!-- buttons should be elements of the form -->
+    <div class="buttons">
+      <!-- default type is submit, so change it to 'button' for not submitting with 'calcel'! -->
+      <button class="secondary" type="button">Cancel</button>
+      <!-- submit type can handle the form that contains the button itself -->
+      <button class="primary" type="submit">Save</button>
+    </div>
   </form>
-  <div class="buttons">
-    <button class="secondary">Cancel</button>
-    <button class="primary" (click)="saveContact()">Save</button>
-  </div>
 </div>
