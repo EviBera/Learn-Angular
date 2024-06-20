@@ -17,7 +17,7 @@
     </section>
     <section>
       <nav>Phone</nav>
-      <div class="flex-column">
+      <div class="flex-column" ngModelGroup="phone">
         <div class="flex-group">
           <input placeholder="Phone" [(ngModel)]="contact.phone.phoneNumber" name="phoneNumber"/>
           <img src="/assets/plus-grey-blue.png" class="add" />
@@ -32,7 +32,7 @@
     <section>
       <nav>Address</nav>
       <div>
-        <div class="address">
+        <div class="address" ngModelGroup="address">
           <div class="flex-group">
             <input placeholder="Address" [(ngModel)]="contact.address.streetAddress" name="streetAddress"/>
             <img src="/assets/plus-grey-blue.png" class="add" />

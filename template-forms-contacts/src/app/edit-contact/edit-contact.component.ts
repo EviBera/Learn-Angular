@@ -48,7 +48,8 @@ export class EditContactComponent implements OnInit {
 
   saveContact(form: NgForm) {
     console.log(form.value);
-    this.contactsSvc.saveContact(this.contact).subscribe({
+    //contact data model is substituded with the freshly formed form.value:
+    this.contactsSvc.saveContact(form.value).subscribe({
       next: () => this.router.navigate(["/contacts"])
     });     
   }
