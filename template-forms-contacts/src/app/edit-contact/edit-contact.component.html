@@ -52,10 +52,10 @@
     <!-- buttons should be elements of the form -->
     <div class="buttons">
       <!-- default type is submit, so change it to 'button' for not submitting with 'calcel'! -->
-      <button *ngIf="!contactForm.submitted" class="secondary" type="button">Cancel</button>
+      <button class="secondary" type="button">Cancel</button>
       <!-- submit type can handle the form that contains the button itself -->
-      <button *ngIf="!contactForm.submitted" class="primary" type="submit">Save</button>
-      <button *ngIf="contactForm.submitted" disabled>Saving...</button>
+      <button class="primary" type="submit">Save</button>
+      <button class="saving" disabled>Saving...</button>
     </div>
   </form>
 </div>
