@@ -3,8 +3,9 @@
     Edit Contact
   </h1>
   <!-- specify the task here with ngSubmit that has to be done with submission -->
-   <!-- it works with the submit button and with hitting 'enter' as well -->
-  <form (ngSubmit)="saveContact()">
+  <!-- it works with the submit button and with hitting 'enter' as well -->
+  <!-- we can use ngForm directive to access FormGroup object which contains all values the user provided -->
+  <form (ngSubmit)="saveContact(contactForm)" #contactForm="ngForm">
     <section>
       <nav>Name/Info</nav>
       <div>
