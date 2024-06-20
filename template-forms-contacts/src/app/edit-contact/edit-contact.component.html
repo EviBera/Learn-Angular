@@ -9,6 +9,7 @@
     <section>
       <nav>Name/Info</nav>
       <div>
+        <input type="hidden" [ngModel]="contact.id" name="id"/>
         <input placeholder="First Name" [(ngModel)]="contact.firstName" name="firstName"/>
         <input placeholder="Last Name" [(ngModel)]="contact.lastName" name="lastName"/>
         <input placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth"/>
