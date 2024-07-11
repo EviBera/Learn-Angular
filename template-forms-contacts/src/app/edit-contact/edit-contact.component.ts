@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Contact } from '../contacts/contact.model';
 import { ContactsService } from '../contacts/contacts.service';
+import { phoneTypeValues } from '../contacts/contact.model';
 
 @Component({
   imports: [CommonModule, FormsModule],
@@ -12,6 +13,8 @@ import { ContactsService } from '../contacts/contacts.service';
   styleUrls: ['./edit-contact.component.css']
 })
 export class EditContactComponent implements OnInit {
+  phoneTypes = phoneTypeValues;
+
   contact: Contact = {
     id: '',
     firstName: '',
