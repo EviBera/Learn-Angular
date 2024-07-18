@@ -17,6 +17,7 @@ export class EditContactComponent implements OnInit {
 
   contact: Contact = {
     id: '',
+    personal: false,
     firstName: '',
     lastName: '',
     dateOfBirth: null,
@@ -50,7 +51,7 @@ export class EditContactComponent implements OnInit {
   }
 
   saveContact(form: NgForm) {
-    console.log(form.value);
+    console.log(this.contact.personal, typeof this.contact.personal);
     //contact data model is substituded with the freshly formed form.value:
     this.contactsSvc.saveContact(form.value).subscribe({
       next: () => this.router.navigate(["/contacts"])
