@@ -2,9 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Contact } from '../contacts/contact.model';
+import { Contact, phoneTypeValues, addressTypeValues } from '../contacts/contact.model';
 import { ContactsService } from '../contacts/contacts.service';
-import { phoneTypeValues } from '../contacts/contact.model';
 
 @Component({
   imports: [CommonModule, FormsModule],
@@ -14,6 +13,7 @@ import { phoneTypeValues } from '../contacts/contact.model';
 })
 export class EditContactComponent implements OnInit {
   phoneTypes = phoneTypeValues;
+  addressTypes = addressTypeValues;
 
   contact: Contact = {
     id: '',
