@@ -13,9 +13,14 @@
         <input placeholder="First Name" [(ngModel)]="contact.firstName" name="firstName" />
         <input placeholder="Last Name" [(ngModel)]="contact.lastName" name="lastName" />
         <input placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth" />
-        <input type="number" placeholder="Favorites Ranking" [(ngModel)]="contact.favoritesRanking" name="favoritesRanking" />
         <div>
-          <input type="checkbox" [(ngModel)]="contact.personal" name="personal"/>Personal
+          <span>Favourites Ranking:</span>
+          <input type="range" min="0" max="5" placeholder="Favorites Ranking" [(ngModel)]="contact.favoritesRanking"
+            name="favoritesRanking" />
+          <span>{{contact.favoritesRanking}}</span>
+        </div>
+        <div>
+          <input type="checkbox" [(ngModel)]="contact.personal" name="personal" />Personal
         </div>
       </div>
     </section>
@@ -28,7 +33,8 @@
         </div>
         <div class="radio">
           <span *ngFor="let phoneType of phoneTypes">
-            <input type="radio" [value]="phoneType.value" [(ngModel)]="contact.phone.phoneType" name="phoneType"> {{phoneType.title}}
+            <input type="radio" [value]="phoneType.value" [(ngModel)]="contact.phone.phoneType" name="phoneType">
+            {{phoneType.title}}
           </span>
         </div>
       </div>
