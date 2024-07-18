@@ -12,7 +12,7 @@
         <input type="hidden" [ngModel]="contact.id" name="id" />
         <input placeholder="First Name" [(ngModel)]="contact.firstName" name="firstName" />
         <input placeholder="Last Name" [(ngModel)]="contact.lastName" name="lastName" />
-        <input placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth" />
+        <input type="date" placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth" />
         <div>
           <span>Favourites Ranking:</span>
           <input type="range" min="0" max="5" placeholder="Favorites Ranking" [(ngModel)]="contact.favoritesRanking"

@@ -20,7 +20,7 @@ export class EditContactComponent implements OnInit {
     personal: false,
     firstName: '',
     lastName: '',
-    dateOfBirth: null,
+    dateOfBirth: '',
     favoritesRanking: 0,
     phone: {
       phoneNumber: '',
@@ -52,7 +52,7 @@ export class EditContactComponent implements OnInit {
   }
 
   saveContact(form: NgForm) {
-    console.log(this.contact.favoritesRanking, typeof this.contact.favoritesRanking);
+    console.log(this.contact.dateOfBirth, typeof this.contact.dateOfBirth);
     //contact data model is substituded with the freshly formed form.value:
     this.contactsSvc.saveContact(form.value).subscribe({
       next: () => this.router.navigate(["/contacts"])
