@@ -10,8 +10,10 @@
       <nav>Name/Info</nav>
       <div>
         <input type="hidden" [ngModel]="contact.id" name="id" />
-        <input placeholder="First Name" [(ngModel)]="contact.firstName" required #firstName="ngModel" name="firstName" [class.error]="firstName.invalid && firstName.touched"/>
-        <em *ngIf="firstName.invalid && firstName.touched">Please enter the first name.</em>
+        <input placeholder="First Name" [(ngModel)]="contact.firstName" required minlength="2" #firstName="ngModel" name="firstName" [class.error]="firstName.invalid && firstName.touched"/>
+        <!-- for multiple validation: use the 'errors' object -->
+        <em *ngIf="firstName.errors?.['required'] && firstName.touched">Please enter the first name.</em>
+        <em *ngIf="firstName.errors?.['minlength'] && firstName.touched">First name must be at least 2 characters.</em>
         <input placeholder="Last Name" [(ngModel)]="contact.lastName" required #lastName="ngModel" name="lastName" [class.error]="lastName.invalid && lastName.touched"/>
         <em *ngIf="lastName.invalid && lastName.touched">Please enter the last name.</em>
         <input type="date" placeholder="Date of Birth" [(ngModel)]="contact.dateOfBirth" name="dateOfBirth" />
