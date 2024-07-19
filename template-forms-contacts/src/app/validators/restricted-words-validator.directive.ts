@@ -1,4 +1,4 @@
-import { Directive } from "@angular/core";
+import { Directive, Input } from "@angular/core";
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from "@angular/forms";
 
 @Directive({
@@ -10,12 +10,18 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from "@an
         useExisting: RestrictedWordsValidator,
     }],
 })
-export class RestrictedWordsValidator implements Validator{
+export class RestrictedWordsValidator implements Validator {
+    @Input('restrictedWords') restrictedWords: string[] = [];
+
     validate(control: AbstractControl): ValidationErrors | null {
         if (!control.value) return null;
 
-        return control.value.includes('foo')
-            ? { restrictedWords : true }
+        const invalidWords = this.restrictedWords
+            .map(w => control.value.includes(w) ? w : null)
+            .filter(w => w !== null);
+
+        return invalidWords.length > 0
+            ? { restrictedWords: invalidWords.join(",") }
             : null;
     }
 
