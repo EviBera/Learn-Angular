@@ -13,10 +13,10 @@ export class ContactsService {
   getContact(id: string): Observable<Contact | undefined> {
     return this.http.get<Contact>(`api/contacts/${id}`)
     //comment out the code below to use strings for representation of date:
-      // .pipe(map(c => {
-      //   const dob = c.dateOfBirth ? new Date(c.dateOfBirth) : null;
-      //   return { ...c, dateOfBirth: dob }
-      // }));
+      .pipe(map(c => {
+        const dob = c.dateOfBirth ? new Date(c.dateOfBirth) : null;
+        return { ...c, dateOfBirth: dob }
+      }));
   }
 
   getAllContacts(): Observable<Contact[]> {
