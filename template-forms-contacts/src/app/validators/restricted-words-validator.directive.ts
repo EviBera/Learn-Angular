@@ -12,10 +12,11 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from "@an
 })
 export class RestrictedWordsValidator implements Validator{
     validate(control: AbstractControl): ValidationErrors | null {
-        return null;
-    }
-    registerOnValidatorChange?(fn: () => void): void {
-        throw new Error("Method not implemented.");
+        if (!control.value) return null;
+
+        return control.value.includes('foo')
+            ? { restrictedWords : true }
+            : null;
     }
 
 }
