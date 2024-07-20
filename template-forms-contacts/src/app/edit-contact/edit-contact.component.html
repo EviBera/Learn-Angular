@@ -37,7 +37,7 @@
         <div *ngFor="let phone of contact.phones; let i = index" class="flex-column">
           <div class="flex-group">
             <input placeholder="Phone" [(ngModel)]="phone.phoneNumber" name="phoneNumber{{i}}" />
-            <img src="/assets/plus-grey-blue.png" class="add" />
+            <img src="/assets/plus-grey-blue.png" class="add" (click)="addPhone()"/>
           </div>
           <div class="radio">
             <span *ngFor="let phoneType of phoneTypes">

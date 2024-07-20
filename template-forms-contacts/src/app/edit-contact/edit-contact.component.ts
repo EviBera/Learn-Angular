@@ -68,4 +68,13 @@ export class EditContactComponent implements OnInit {
       next: () => this.router.navigate(["/contacts"])
     });     
   }
+
+  addPhone() {
+    this.contact.phones.push(
+      {
+        phoneNumber: '',
+        phoneType: '',
+      }
+    );
+  }
 }
