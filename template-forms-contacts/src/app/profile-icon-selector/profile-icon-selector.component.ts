@@ -11,4 +11,11 @@ import { profileIconnames } from './profile-icon-names';
 })
 export class ProfileIconSelectorComponent {
   profileIcons = profileIconnames;
+  showAllIcons: boolean = true;
+  selectedIcon!: string | null;
+
+  iconSelected(icon: string){
+    this.showAllIcons = false;
+    this.selectedIcon = icon;
+  }
 }
