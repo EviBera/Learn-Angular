@@ -16,7 +16,7 @@ export class EditContactComponent implements OnInit {
     personal: false,
     //FormControl syntax: firstName: new FormControl('initial value', Validator or [Validators array])
     //eg.: new FormControl('', Validators.required);
-    
+
     //FormBuilder syntax:
     firstName: ['', Validators.required],
     lastName: '',
@@ -57,6 +57,10 @@ export class EditContactComponent implements OnInit {
       
       this.contactForm.setValue(contact);
     })
+  }
+
+  get firstName(){
+    return this.contactForm.controls.firstName;
   }
 
   saveContact() {

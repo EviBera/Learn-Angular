@@ -6,8 +6,8 @@
     <section>
       <nav>Name/Info</nav>
       <div>
-        <input formControlName="firstName" placeholder="First Name" />
-        {{contactForm.controls.firstName.valid}}
+        <input formControlName="firstName" [class.error]="firstName.touched && firstName.invalid" placeholder="First Name" />
+        <em *ngIf="firstName.touched && firstName.invalid">Please enter a first name.</em> 
         <input formControlName="lastName" placeholder="Last Name" />
         <input formControlName="dateOfBirth" type="date" 
           [value]="contactForm.controls.dateOfBirth.value | date:'yyyy-MM-dd'" placeholder="Date of Birth" />
