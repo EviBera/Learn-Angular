@@ -18,7 +18,7 @@ export class EditContactComponent implements OnInit {
     //eg.: new FormControl('', Validators.required);
 
     //FormBuilder syntax:
-    firstName: ['', Validators.required],
+    firstName: ['', [Validators.required, Validators.minLength(3)]],
     lastName: '',
     dateOfBirth: '',
     favoritesRanking: < number | null>null,
