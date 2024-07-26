@@ -54,6 +54,10 @@ export class EditContactComponent implements OnInit {
       //cons names = {firstName: contact.firstName, lastName: contact.lastName};
       //this.contactForm.patchValue(names);
       
+      for(let i = 1; i < contact.phones.length; i++){
+        this.addPhone();
+      }
+
       this.contactForm.setValue(contact);
     })
   }
@@ -71,6 +75,10 @@ export class EditContactComponent implements OnInit {
       phoneNumber: '',
       phoneType: '',
     })
+  }
+
+  addPhone() {
+    this.contactForm.controls.phones.push(this.createPhoneGroup());
   }
 
   saveContact() {
