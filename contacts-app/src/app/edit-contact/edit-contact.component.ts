@@ -14,6 +14,7 @@ export class EditContactComponent implements OnInit {
   addressTypes = addressTypeValues;
   contactForm = this.fb.nonNullable.group({
     id: '',
+    icon: '',
     personal: false,
     //FormControl syntax: firstName: new FormControl('initial value', Validator or [Validators array])
     //eg.: new FormControl('', Validators.required);

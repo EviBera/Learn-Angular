@@ -6,7 +6,7 @@
     <section>
       <nav>Name/Info</nav>
       <div>
-        <con-profile-icon-selector />
+        <con-profile-icon-selector formControlName="icon"/>
         <input formControlName="firstName" [class.error]="firstName.touched && firstName.invalid"
           placeholder="First Name" />
         <em *ngIf="firstName.touched && firstName.errors?.['required']">Please enter a first name.</em>
