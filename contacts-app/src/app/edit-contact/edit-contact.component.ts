@@ -21,8 +21,8 @@ export class EditContactComponent implements OnInit {
     //FormBuilder syntax:
     firstName: ['', [Validators.required, Validators.minLength(3)]],
     lastName: '',
-    dateOfBirth: '',
-    favoritesRanking: < number | null>null,
+    dateOfBirth: < Date | null >null,
+    favoritesRanking: < number | null >null,
     phone: this.fb.nonNullable.group({
       phoneNumber: '',
       phoneType: '',
