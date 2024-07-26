@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { profileIconNames } from './prifile-icon-names';
+import { profileIconNames } from './profile-icon-names';
 
 @Component({
   selector: 'con-profile-icon-selector',
